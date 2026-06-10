@@ -1,0 +1,16 @@
+.heroImage{
+    display: flex;
+    justify-content: center;
+align-items: center;
+}
+.heroImageWrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.heroImage{
+    width: 100%;
+    max-width: 1216px;
+    display: block;
+    border-radius: 60px;
+}

@@ -1,10 +1,10 @@
 import React from 'react'
+import Hero from '../../components/Hero/Hero'
 
 const HomePage = () => {
   return (
     <div>
-      <h1>PetLove AI </h1>
-      <h2>HomePage works</h2>
+     <Hero/>
     </div>
   )
 }
