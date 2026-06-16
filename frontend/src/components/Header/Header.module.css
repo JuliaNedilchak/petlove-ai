@@ -1,0 +1,25 @@
+.header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+
+
+
+}
+.symbol{
+    font-weight: extra-bold;
+    font-size:28px ;
+    line-height: 28px;
+    letter-spacing: -4%;
+    color: #ffffff;
+}
+.category{
+    padding: 15px 20px;
+    font-weight: medium;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -3%;
+    border-radius: 30px;
+    border: 1px solid white;
+}
