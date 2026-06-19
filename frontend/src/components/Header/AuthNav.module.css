@@ -1,0 +1,16 @@
+.authBlock{
+display: flex;
+gap: 10px;
+}
+
+.auth{
+     padding: 15px 20px;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -3%;
+    border-radius: 30px;
+text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.4);
+}
