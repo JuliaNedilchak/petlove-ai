@@ -1,0 +1,9 @@
+.friendsList{
+    list-style: none;
+    padding: 0%;
+    margin: 0%;
+    display: grid;
+    grid-template-columns: repeat(3, 371px);
+    gap: 28px;
+}
+
