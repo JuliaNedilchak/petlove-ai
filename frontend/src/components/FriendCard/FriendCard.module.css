@@ -15,3 +15,8 @@
 .card{
     position: relative;
 }
+
+.friendsInfo{
+    display: flex;
+    flex-direction: row;
+}
