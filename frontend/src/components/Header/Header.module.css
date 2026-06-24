@@ -30,3 +30,9 @@ text-decoration: none;
     gap: 10px;
     flex-direction: row;
 }
+.dark{
+    color: #111111;
+}
+.dark a{
+    color: #111111;
+}

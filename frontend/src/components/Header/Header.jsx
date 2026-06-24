@@ -4,10 +4,10 @@ import AuthNav from './AuthNav'
 import UserNav from './UserNav';
 import css from './Header.module.css'
 
-const Header = () => {
+const Header = ({className}) => {
   const isLoggedIn=false;
   return (
-    <header className={css.header}>
+    <header className={`${css.header} ${css[className]} `}>
         <Link className={css.symbol} to='/home'>petlove</Link>
         <nav className={css.nav}>
             <Link className={css.category} to='/news'>News</Link>
