@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { getNews } from '../../api/newsApi';
 import NewsList from '../../components/NewsList/NewsList';
 import Header from '../../components/Header/Header';
+import css from './NewsPage.module.css';
 
 const NewsPage = () => {
   const [news, setNews]= useState([]);
@@ -28,26 +29,24 @@ const NewsPage = () => {
       <div>
         <h2>News</h2>
         <NewsList news={news}/>
-        <div>
-          <button type='button' 
+        <div className={css.paginList}>
+          <button className={css.pagin} type='button' 
           onClick={()=> setPage(page-1)}
             disabled={page===1}
           > &lt; </button>
          
-          <button type='button' 
-          onClick={()=> setPage(1)}
-           
-          > 1 </button>
-          <button type='button' 
+          <button  className={css.pagin} type='button' 
+          onClick={()=> setPage(1)}> 1 </button>
+          <button  className={css.pagin} type='button' 
           onClick={()=> setPage(2)}
            
           > 2 </button>
-          <button type='button' 
+          <button  className={css.pagin} type='button' 
           onClick={()=> setPage(3)}
             
           > 3 </button>
           <span>...</span>
-          <button type='button'
+          <button  className={css.pagin} type='button'
           onClick={()=> setPage(page+1)}
           disabled={page===totalPages}> &gt;</button>
         </div>
