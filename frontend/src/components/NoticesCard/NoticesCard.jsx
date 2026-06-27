@@ -1,9 +1,10 @@
 import React from 'react'
+import css from './NoticesCard.module.css'
 
 const NoticesCard = ({pet}) => {
   return (
-    <li>
-    <img width='315' src={pet.imgURL}/>
+    <li className={css.card}>
+    <img className={css.image} width='315' src={pet.imgURL}/>
     <h2>{pet.title}</h2>
     <p>{pet.popularity}</p>
     <div>
