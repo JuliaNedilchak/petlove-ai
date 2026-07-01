@@ -1,5 +1,5 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
-
+ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import * as Yup from 'yup';
 import { register } from '../../redux/auth/authOperations';
@@ -20,9 +20,18 @@ const RegisterSchema= Yup.object({
 })
 
 const RegisterPage = () => {
+ const navigate = useNavigate();
   const dispatch= useDispatch();
- const handleSubmit=(values)=>{
-  dispatch(register(values))};
+ const handleSubmit= async values=>{
+ try{ await dispatch(register(values)).unwrap()
+  navigate('/profile')
+
+ }
+ catch(error){
+  console.log(error)
+ }
+}
+ 
     return (
    <section>
     <div className='container'>
@@ -33,7 +42,7 @@ const RegisterPage = () => {
        <Form>
         <label>
           name
-<Field name='name' type='name' placeholder='name'/>
+<Field name='name' type='text' placeholder='name'/>
 <ErrorMessage name='name' component='p'/>
         </label>
         <label>

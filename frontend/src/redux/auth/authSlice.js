@@ -36,8 +36,17 @@ const authSlice= createSlice({
         .addCase(register.pending,  state=>{
             state.isLoading=true;
             state.error=null;
-        }
-        )
+        })
+        .addCase(register.fulfilled, (state,action)=>{
+            state.isLoading=false;
+            state.user=action.payload.user;
+            state.token=action.payload.token;
+            state.isLoggedIn=true;
+        })
+        .addCase(register.rejected,(state,action)=>{
+            state.isLoading=false;
+            state.error=action.payload;
+        })
     }
 })
 

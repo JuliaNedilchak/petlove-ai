@@ -3,6 +3,9 @@ import {Formik, Form,Field, ErrorMessage} from 'formik';
 import * as Yup from 'yup';
 import {useDispatch} from 'react-redux';
 import { login } from '../../redux/auth/authOperations';
+import Header from '../../components/Header/Header';
+import dogLogin from '../../assets/dogLogin.jpg';
+import css from './LoginPage.module.css';
 
 const LoginSchema = Yup.object({
   email: 
@@ -22,29 +25,39 @@ const LoginPage = () => {
     dispatch(login(values))
   }
   return (
-    <section>
+  
       <div className='container'>
-        <h1>Log in</h1>
-        <Formik
+       <Header className='dark'/>
+         <section className={css.loginPage}>
+    <div>
+      <img src={dogLogin}
+      />
+    </div>
+    <div  className={css.form}>
+    <h1>Log in</h1>
+    <p>Welcome! Please enter your credentials to login to the platform:</p>
+    <Formik 
           initialValues={initialValues}
           validationSchema={LoginSchema}
           onSubmit={handleSubmit}>
-          <Form>
-            <label>
-              Email
-              <Field type='email' name='email' placeholder='Email'/>
+          <Form className={css.inputs}>
+            <label className={css.label} >
+              
+              <Field className={css.field} type='email' name='email' placeholder='Email'/>
               <ErrorMessage name='email' component='p'/>
             </label>
-            <label>
-              Password
-              <Field type='password' name='password' placeholder='password'/>
+            <label >
+              
+              <Field className={css.field} type='password' name='password' placeholder='password'/>
               <ErrorMessage name='password' component='p'/>
             </label>
-            <button type='submit'> log in </button>
+            <button className={css.button} type='submit'> log in </button>
           </Form>        
           </Formik>
+          </div>
+            </section>
       </div>
-    </section>
+   
   )
 }
 
