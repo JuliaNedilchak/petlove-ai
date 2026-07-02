@@ -1,0 +1,28 @@
+.RegisterPage{
+     display: flex;
+    gap: 32px;
+    justify-content: center;
+
+}
+
+.field{
+     padding: 16px;
+    border-radius: 30px;
+      width: 424px;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+   gap: 16px;
+ 
+}
+
+.button{
+    display: flex;
+    padding: 16px;
+    border-radius: 30px;
+      width: 424px;
+      align-items: center;
+      justify-content: center;
+}

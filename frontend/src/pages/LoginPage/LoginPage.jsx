@@ -6,6 +6,7 @@ import { login } from '../../redux/auth/authOperations';
 import Header from '../../components/Header/Header';
 import dogLogin from '../../assets/dogLogin.jpg';
 import css from './LoginPage.module.css';
+import { useNavigate } from 'react-router-dom';
 
 const LoginSchema = Yup.object({
   email: 
@@ -20,9 +21,16 @@ const initialValues=({
 })
 
 const LoginPage = () => {
+  const navigate=useNavigate();
   const dispatch= useDispatch();
-  const handleSubmit=values=>{
-    dispatch(login(values))
+  const handleSubmit= async values=>{
+    try{
+ dispatch(login(values)).unwrap();
+ navigate('/profile');
+  }
+   catch(error){
+    console.log(error);
+   }
   }
   return (
   
